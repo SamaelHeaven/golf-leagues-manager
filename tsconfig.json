@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "jsx": "react",
+    "paths": {
+      "@application/*": ["src/application/*"],
+      "@backend/*": ["src/backend/*"],
+      "@common/*": ["src/common/*"]
+    }
+  }
+}

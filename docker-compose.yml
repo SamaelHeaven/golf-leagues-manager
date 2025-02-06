@@ -1,0 +1,20 @@
+services:
+  node:
+    build:
+      context: ../..
+      dockerfile: "docker/bun/Dockerfile"
+    container_name: ${WEBSERVER_CONTAINER}
+    restart: "always"
+    links:
+      - mongodb
+    ports:
+      - ${EXTERNAL_WEB_PORT}:${EXPRESS_PORT}
+    volumes:
+      - ./:/app
+
+  mongodb:
+    command: mongod --quiet --logpath /dev/null
+    container_name: ${DATABASE_CONTAINER}
+    image: mongo:5.0
+    ports:
+      - ${MONGO_PORT}:${MONGO_PORT}
