@@ -8,6 +8,8 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "jsx": "react",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "paths": {
       "@application/*": ["src/application/*"],
       "@backend/*": ["src/backend/*"],

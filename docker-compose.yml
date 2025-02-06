@@ -1,8 +1,8 @@
 services:
   node:
     build:
-      context: ../..
-      dockerfile: "docker/bun/Dockerfile"
+      context: .
+      dockerfile: "./docker/bun/Dockerfile"
     container_name: ${WEBSERVER_CONTAINER}
     restart: "always"
     links:
