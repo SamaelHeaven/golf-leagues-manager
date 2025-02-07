@@ -21,7 +21,7 @@ type Storage = {
 };
 
 export class Application {
-    public static readonly host = process.env.HOST || "localhost";
+    public static readonly host = process.env.HOST!;
     public static readonly port = Number(process.env.EXPRESS_PORT);
     public static readonly externalPort = Number(process.env.EXTERNAL_WEB_PORT);
 

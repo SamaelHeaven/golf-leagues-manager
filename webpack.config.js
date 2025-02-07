@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 const dotenv = require("dotenv");
 const nodeExternals = require("webpack-node-externals");
@@ -30,7 +31,12 @@ const applicationConfig = {
                 use: ["style-loader", "css-loader", "postcss-loader"]
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            HOST: `${process.env.HOST}:${process.env.EXTERNAL_WEB_PORT}`
+        })
+    ]
 };
 
 const backendConfig = {
