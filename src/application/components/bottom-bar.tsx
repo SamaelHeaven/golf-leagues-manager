@@ -11,16 +11,18 @@ export function BottomBar() {
     ];
 
     return (
-        <nav className="h-16">
-            <div className="btm-nav">
-                {tabs.map(tab => (
-                    <Link
-                        key={tab.href}
-                        to={tab.href}
-                        className={`bg-neutral text-neutral-content ${location === tab.href ? "active" : ""}`}>
-                        {tab.label}
-                    </Link>
-                ))}
+        <nav className="bg-neutral">
+            <div className="mb-[var(--safe-area-inset-bottom)] h-16">
+                <div className="btm-nav mb-[var(--safe-area-inset-bottom)] bg-neutral pl-[var(--safe-area-inset-left)] pr-[var(--safe-area-inset-right)]">
+                    {tabs.map(tab => (
+                        <Link
+                            key={tab.href}
+                            to={tab.href}
+                            className={`bg-neutral text-neutral-content ${location === tab.href ? "active" : ""}`}>
+                            {tab.label}
+                        </Link>
+                    ))}
+                </div>
             </div>
         </nav>
     );

@@ -7,7 +7,7 @@ export function AppContent() {
     return (
         <main className="flex min-h-screen flex-col">
             <TopBar />
-            <div className="flex-grow">
+            <div className="flex-grow pl-[var(--safe-area-inset-left)] pr-[var(--safe-area-inset-right)]">
                 <Router />
             </div>
             <BottomBar />
