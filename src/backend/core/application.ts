@@ -26,7 +26,7 @@ export class Application {
     public static readonly externalPort = Number(process.env.EXTERNAL_WEB_PORT);
 
     private static readonly express: Express = express();
-    private static readonly storage = new AsyncLocalStorage();
+    private static readonly storage = new AsyncLocalStorage<Storage>();
     private static readonly routes: Route[] = [];
     private static readonly middlewares: Middleware[] = [];
     private static readonly databaseUrl = `mongodb://${process.env.DATABASE_CONTAINER}:${process.env.MONGO_PORT}/database`;
@@ -61,7 +61,7 @@ export class Application {
     }
 
     private static get store(): Storage {
-        return this.storage.getStore() as Storage;
+        return this.storage.getStore()!;
     }
 
     public static launch(callback?: () => void) {
