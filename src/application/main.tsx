@@ -1,7 +1,8 @@
+import { AppContent } from "@application/components/app-content";
+import "@application/stylesheets/styles.css";
 import { SafeArea } from "capacitor-plugin-safe-area";
 import React from "react";
 import { createRoot } from "react-dom/client";
-import "./styles.css";
 
 (async () => {
     await SafeArea.addListener("safeAreaChanged", data => {
@@ -12,5 +13,5 @@ import "./styles.css";
     });
 
     const root = createRoot(document.getElementById("root")!);
-    root.render(<h1>Hello, World</h1>);
+    root.render(<AppContent />);
 })();
