@@ -113,9 +113,6 @@ export class Application {
             res.redirect(307, normalizedUrl);
             return;
         }
-        if (req.path === "/favicon.ico") {
-            req.url = "/assets/favicons/favicon.ico";
-        }
         return next();
     }
 
